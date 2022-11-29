@@ -4,7 +4,7 @@ function DoneList(){
 
     return(
         <div className="listDiv doneList">
-        <h2>Completed Tasks</h2>
+        <p>Completed Tasks</p>
 
         </div>
     )
