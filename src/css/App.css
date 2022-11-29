@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import "./constants.css";
+
+body{
+  background-image: var(--gradientColours);
+  font-family: 'Quicksand', sans-serif;
+  height: 800px;
+  text-align: center;
+}
+.listGroupDiv{
+
+  display: flex;
+  justify-content:space-evenly;
+
+}
+.listDiv{
+
+  height: 300px;
+  width: 350px;
+  border-radius: 5px;
+  margin-top: 20px;
+
+}
+.doneList{
+  background-color: var(--doneListColor);
+}
+.ogList{
+  background-color: var(--ogListColor);  
+  }
+
+.droppedList{
+  background-color: var(--droppedListColor);
+}
+
+.transpButtons{
+  background-color: transparent;
+  border:transparent;
+  font-size:1.5rem;
+ }
+ .transpButtons:hover{
+  transform: scale(1.2);
+ }
+
+.inputText{
+  outline: none;
+  border: none;
+  width: 250px;
+  
+}
+.addItemDiv{
+  background-color: white;
+  border-radius: 10px;
+  width:350px;
+  height: 50px;
+  padding-top: 5px;
+  margin: auto auto;
+}

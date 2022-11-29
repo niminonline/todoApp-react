@@ -1,0 +1,8 @@
+:root{
+
+    --doneListColor: #11c562;
+    --ogListColor: #f1b83b;
+    --droppedListColor: #de3030;
+    --gradientColours: linear-gradient(45deg, rgb(248, 2, 228),rgb(104, 0, 241));
+
+}
