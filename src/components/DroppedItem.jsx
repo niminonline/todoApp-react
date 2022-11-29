@@ -2,10 +2,10 @@ import React from 'react'
 
 export const DroppedItem = () => {
   return (
-    <div>
-    <button className="bi bi-arrow-clockwise transpButtons"></button>
-    <p>Dropped Item </p>
-    <button className="bi bi-trash transpButtons"></button>
+    <div className= "droppedItemDiv itemDiv">
+    <button className="bi bi-arrow-clockwise transpButtons text-primary"></button>
+    <p className='itemName'>Dropped Item </p>
+    <button className="bi bi-trash transpButtons text-danger"></button>
     </div>
   )
 }

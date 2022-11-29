@@ -1,11 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Ubuntu&display=swap');
 @import "./constants.css";
 
 body{
   background-image: var(--gradientColours);
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Raleway', sans-serif;
   height: 800px;
   text-align: center;
+  margin-top: 20px;
+}
+.siteTitle{
+  font-weight: bold;
+  color: var(--titleColor);
+  /* background: -webkit-linear-gradient(rgb(38, 5, 113), rgb(49, 74, 236));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+}
+.siteSubTitle{
+  color: var(--titleColor);
 }
 .listGroupDiv{
 
@@ -25,7 +36,7 @@ body{
   background-color: var(--doneListColor);
 }
 .ogList{
-  background-color: var(--ogListColor);  
+  background-color: var(--ogListColor);
   }
 
 .droppedList{
@@ -45,13 +56,35 @@ body{
   outline: none;
   border: none;
   width: 250px;
-  
+
 }
 .addItemDiv{
-  background-color: white;
+  background-color: var(--addItembgcolor);
   border-radius: 10px;
   width:350px;
   height: 50px;
   padding-top: 5px;
   margin: auto auto;
+}
+
+.itemDiv{
+  width:320px;
+  display:flex;
+  background-color: var(--itemDivbgcolor);
+  border-radius: 5px;
+  margin:5px auto;
+ }
+ .itemDiv:hover{
+  transform: scale(1.05);
+ }
+.listTitle{
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  margin-top: 10px;
+
+}
+.itemName{
+  flex:1;
+  margin:5px;
+
 }

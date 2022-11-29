@@ -4,5 +4,8 @@
     --ogListColor: #f1b83b;
     --droppedListColor: #de3030;
     --gradientColours: linear-gradient(45deg, rgb(248, 2, 228),rgb(104, 0, 241));
+    --itemDivbgcolor: rgba(255,255,255,.7);
+    --addItembgcolor:white;
+    --titleColor: white;
 
 }
