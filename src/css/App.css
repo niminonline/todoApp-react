@@ -58,6 +58,12 @@ body{
   width: 250px;
 
 }
+.listTitle{
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  margin-top: 10px;
+
+}
 .addItemDiv{
   background-color: var(--addItembgcolor);
   border-radius: 10px;
@@ -77,14 +83,19 @@ body{
  .itemDiv:hover{
   transform: scale(1.05);
  }
-.listTitle{
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: bold;
-  margin-top: 10px;
+
+.itemContent{
+  flex:1;
+  text-align: left;
+  margin: 2px;
+  padding: 0px;
+}
+
+.itemTitle{
+  margin-bottom: 0px;
 
 }
-.itemName{
-  flex:1;
-  margin:5px;
 
+.itemDate{
+font-size: 10px;
 }

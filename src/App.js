@@ -9,10 +9,10 @@ function App() {
   return (
     <div className="App">
     <Header />
-    
+
     <AddItem />
       
-      <div className="listGroupDiv">
+      <div className="listGroupDiv row">
 
       <DoneList />
       <OGList />
