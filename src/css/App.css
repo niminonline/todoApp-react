@@ -87,15 +87,18 @@ body{
 .itemContent{
   flex:1;
   text-align: left;
-  margin: 2px;
+  margin: 2px 0px 0px 5px;
   padding: 0px;
 }
 
 .itemTitle{
-  margin-bottom: 0px;
+  margin: 0px;
 
 }
 
 .itemDate{
 font-size: 10px;
+}
+.strike{
+  text-decoration: line-through;
 }
