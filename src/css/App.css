@@ -98,6 +98,8 @@ body{
 
 .itemDate{
 font-size: 10px;
+font-family: 'Ubuntu', sans-serif;
+
 }
 .strike{
   text-decoration: line-through;

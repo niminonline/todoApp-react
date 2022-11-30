@@ -7,7 +7,8 @@ function AddItem(props) {
  
 
   function addBtnAction() {
-    props.addItemfun(task);
+    task!== ""? props.addItemfun(task) : alert("Enter a task");
+    settask("");
   
   }
 
@@ -22,6 +23,7 @@ function AddItem(props) {
         onChange={(evnt) => settask(evnt.target.value)}
         placeholder="Add a task"
         value={task}
+        onKeyDown= {((evnt)=> (evnt.key === "Enter")&& addBtnAction())}
       />
       <button
         className="bi bi-eraser-fill transpButtons text-secondary"
@@ -30,6 +32,7 @@ function AddItem(props) {
       <button
         className="bi bi-plus-lg transpButtons text-secondary"
         onClick={addBtnAction}
+        
       ></button>
     </div>
   );

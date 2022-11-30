@@ -1,6 +1,13 @@
 import React from "react";
 
 function OGItem(props) {
+
+  function deleteBtnAction(){
+    props.deleteFun(props.id);
+
+  }
+
+
   return (
     
 
@@ -10,7 +17,7 @@ function OGItem(props) {
         <p className="itemTitle">{props.data}</p>
         <p className="itemDate">{props.date}</p>
       </div>
-      <button className="bi bi-trash transpButtons text-danger"></button>
+      <button className="bi bi-trash transpButtons text-danger" onClick={deleteBtnAction}></button>
     </div>
 
 
