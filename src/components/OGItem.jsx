@@ -12,7 +12,7 @@ function OGItem(props) {
     
 
       <div className="ogItemDiv itemDiv">
-      <button className="bi bi-check-lg transpButtons text-success"></button>
+      <button className="bi bi-check-lg transpButtons text-success" onClick={()=>props.doneFun(props.id)}></button>
       <div className="itemContent ">
         <p className="itemTitle">{props.data}</p>
         <p className="itemDate">{props.date}</p>

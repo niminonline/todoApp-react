@@ -4,11 +4,11 @@ function DroppedItem(props) {
   return (
    
     <div className= "droppedItemDiv itemDiv">
-    <button className="bi bi-arrow-clockwise transpButtons text-primary"></button>
+    <button className="bi bi-arrow-clockwise transpButtons text-primary" onClick={()=>props.restoreFun(props.id)}></button>
     <div className="itemContent "> <p className='itemTitle strike'>{props.data} </p>
     <p className='itemDate'>{props.date}</p>
     </div>
-    <button className="bi bi-trash transpButtons text-danger"></button>
+    <button className="bi bi-trash transpButtons text-danger" onClick={()=>props.deleteFun(props.id)}></button>
     </div>
 
        
