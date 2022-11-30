@@ -32,15 +32,15 @@ body{
   margin-top: 20px;
 
 }
-.doneList{
-  background-color: var(--doneListColor);
+.DoneItem{
+  background-color: var(--DoneItemColor);
 }
-.ogList{
-  background-color: var(--ogListColor);
+.OGItem{
+  background-color: var(--OGItemColor);
   }
 
-.droppedList{
-  background-color: var(--droppedListColor);
+.DroppedItem{
+  background-color: var(--DroppedItemColor);
 }
 
 .transpButtons{

@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import App from "../App";
 
 
-function AddItem() {
+
+function AddItem(props) {
   const [task, settask] = useState("");
  
 
-  function addBtnAction(props) {
-    
-   props.addItemfun(task);
+  function addBtnAction() {
+    props.addItemfun(task);
   
   }
 
