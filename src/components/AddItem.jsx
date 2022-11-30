@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import { OGItem } from "./OGItem";
+import App from "../App";
+
 
 function AddItem() {
   const [task, settask] = useState("");
-  const [addTask, setAddTask] = useState([{}]);
+ 
 
-  function addBtnAction() {
+  function addBtnAction(props) {
     
-     setAddTask([...addTask, { id: Date.now(), data: task, date: new Date().toLocaleDateString("en-IN") }]);
-    console.log(Date.now() + " "+new Date().toLocaleDateString("en-IN") );
-    OGItem.updateOgArray(Date.now(), task, new Date().toLocaleDateString("en-IN"));
+   props.addItemfun(task);
+  
   }
 
  
