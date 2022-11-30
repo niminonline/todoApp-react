@@ -30,9 +30,6 @@ function App() {
       console.log("Task "+ id +" has been removed");
 
     }
-
-
-
   }
 
   function deleteOGTask(id) {
