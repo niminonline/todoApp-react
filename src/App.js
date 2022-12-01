@@ -74,7 +74,7 @@ function App() {
         </div>
 
         <div className="listDiv OGItem">
-          <p className="listTitle"> On Going Tasks</p>
+          <p className="listTitle"> Ongoing Tasks</p>
           {ogTask.map((element) => (
             <OGItem
               id={element.id}
