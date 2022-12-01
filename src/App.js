@@ -5,11 +5,14 @@ import OGItem from "./components/OGItem";
 import DoneItem from "./components/DoneItem";
 import DroppedItem from "./components/DroppedItem";
 import React, { useState } from "react";
+import mongoose from "mongoose";
 
 function App() {
   const [ogTask, setOGTask] = useState([]);
   const [doneTask, setdoneTask] = useState([]);
   const [droppedTask, setDroppedTask] = useState([]);
+
+  mongoose.connect("todoDB",(err)=>console.log(err));
   
 
 
