@@ -13,6 +13,7 @@ function App() {
   const [ogTask, setOGTask] = useState(JSON.parse(localStorage.getItem("LocalOgList"))||[]);
   const [doneTask, setdoneTask] = useState(JSON.parse(localStorage.getItem("LocalDoneList"))||[]);
   const [droppedTask, setDroppedTask] = useState(JSON.parse(localStorage.getItem("LocalDroppedList"))||[]);
+  const [listname,setListname]= useState("OG");
 
   useEffect(()=>{
 
@@ -28,7 +29,7 @@ function App() {
  
   function itemAddonClick(task) {
     console.log("New Item Added to Ongoing List");
-    setOGTask((prevVal) => [...prevVal,{ id: Date.now(), data: task, date: new Date().toLocaleString("en-IN")}]);
+    setOGTask((prevVal) => [...prevVal,{ id: Date.now(), data: task, list: listname, date: new Date().toLocaleString("en-IN")}]);
   }
 
   function doneTaskFun(id){
