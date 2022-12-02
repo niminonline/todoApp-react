@@ -12,8 +12,6 @@ function App() {
   const [droppedTask, setDroppedTask] = useState([]);
 
   
-
-
  
   function itemAddonClick(task) {
     console.log("New Item Added to Ongoing List");
