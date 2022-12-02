@@ -50,7 +50,7 @@ function App() {
   function restoreDroppedTask(id){
     setOGTask((prevVal)=>[...prevVal, ...droppedTask.filter((element)=>element.id === id)]);
     setDroppedTask(()=> droppedTask.filter((element)=> element.id !==id))
-    console.log("Task "+ id+ " restored to Ongoing List");
+    console.log("Task "+ id+ " restored to ongoing List");
   }
 
   return (
