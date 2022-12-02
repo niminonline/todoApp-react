@@ -107,3 +107,19 @@ font-family: 'Ubuntu', sans-serif;
 .strike{
   text-decoration: line-through;
 }
+/* .strike:hover{
+  text-decoration:none;
+} */
+.blurEffect{
+  filter:blur(1px)
+
+}
+.blurEffect:hover{
+  filter:none;
+}
+.droppedItemDiv .itemContent:hover .itemTitle{
+  
+    text-decoration: none;
+
+  }
+  

@@ -4,12 +4,25 @@ import Header from "./components/Header";
 import OGItem from "./components/OGItem";
 import DoneItem from "./components/DoneItem";
 import DroppedItem from "./components/DroppedItem";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
+
+
 
 function App() {
-  const [ogTask, setOGTask] = useState([]);
-  const [doneTask, setdoneTask] = useState([]);
-  const [droppedTask, setDroppedTask] = useState([]);
+ 
+  const [ogTask, setOGTask] = useState(JSON.parse(localStorage.getItem("LocalOgList"))||[]);
+  const [doneTask, setdoneTask] = useState(JSON.parse(localStorage.getItem("LocalDoneList"))||[]);
+  const [droppedTask, setDroppedTask] = useState(JSON.parse(localStorage.getItem("LocalDroppedList"))||[]);
+
+  useEffect(()=>{
+
+    localStorage.setItem("LocalOgList", JSON.stringify(ogTask));
+    localStorage.setItem("LocalDoneList", JSON.stringify(doneTask));
+    localStorage.setItem("LocalDroppedList", JSON.stringify(droppedTask));
+
+  },[ogTask,doneTask,droppedTask])
+
+
 
   
  

@@ -3,8 +3,8 @@ import React from "react";
 function DoneItem(props) {
   return (
     <div className="doneItemDiv itemDiv">
-      <div className="itemContent ">
-        <p className="itemTitle strike">{props.data} </p>
+      <div className="itemContent blurEffect">
+        <p className="itemTitle">{props.data} </p>
         <p className="itemDate">{props.date}</p>
       </div>
       <button
