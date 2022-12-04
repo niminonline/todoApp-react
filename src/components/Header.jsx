@@ -14,10 +14,10 @@ function Header() {
     break;
     case (period>=16 && period<19): period="Evening 🌇";
     break;
-    case (period>=19 && period<=23): period="Evening 🌙";
+    case (period>=19 && period<24): period="Evening 🌙";
     break;
 
-    default: period="Night"
+    default: period="Morning"
   }
   console.log("Period= " + period);
   return (

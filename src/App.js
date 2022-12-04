@@ -5,6 +5,7 @@ import OGItem from "./components/OGItem";
 import DoneItem from "./components/DoneItem";
 import DroppedItem from "./components/DroppedItem";
 import React, { useState, useEffect } from "react";
+import Footer from "./components/Footer";
 
 function App() {
   const [task, setTask] = useState(
@@ -93,8 +94,8 @@ function App() {
       <Header />
       <AddItem addItemfun={itemAddonClick} />
 
-      <div className="listGroupDiv row">
-        <div className="listDiv DoneItem">
+      <div className="listGroupDiv row" >
+        <div className="listDiv DoneItem ">
           <p className="listTitle">Finished</p>
           {task
             .filter((elements) => elements.list === "done")
@@ -109,7 +110,7 @@ function App() {
             ))}
         </div>
 
-        <div className="listDiv OGItem">
+        <div className="listDiv OGItem ">
           <p className="listTitle"> Ongoing</p>
           {task
             .filter((elements) => elements.list === "OG")
@@ -142,6 +143,7 @@ function App() {
             ))}
         </div>
       </div>
+              <Footer />
     </div>
   );
 }

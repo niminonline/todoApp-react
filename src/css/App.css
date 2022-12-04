@@ -4,7 +4,7 @@
 body{
   background-image: var(--gradientColours);
   font-family: 'Raleway', sans-serif;
-  height: 800px;
+  min-height: 600px;
   text-align: center;
   margin-top: 20px;
 }
@@ -18,20 +18,21 @@ width: 60px;
 font-size: 25px;
 background-color: var(--floatingBtnBgColor);
 border: none;
-outline: none;
 box-shadow: 0 0 10px 0 black;
 position: fixed;
 right: 30px;
 bottom: 30px;
 text-align: center;
-
 z-index: 1;
+transition: 1s;
+transform: rotate(-60deg) scale(1);
 
 }
 .floatingReset:hover{
 transform: rotate(60deg) scale(1.1);
-
+transition: 1s;
   }
+
 
 .siteTitle{
   font-weight: bold;
@@ -63,9 +64,8 @@ transform: rotate(60deg) scale(1.1);
   display: flex;
   justify-content:space-evenly;
   overflow: hidden;
-  
+ }
 
-}
 .listDiv{
   width: 450px;
   border-radius: 5px;
@@ -76,9 +76,7 @@ transform: rotate(60deg) scale(1.1);
 }
 .DoneItem{
   background-color: var(--DoneItemColor);
-  
-  
-  
+
 }
 .OGItem{
   background-color: var(--OGItemColor);
@@ -105,6 +103,7 @@ transform: rotate(60deg) scale(1.1);
 .listTitle{
   font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
+  font-size: 1.2rem;
   margin-top: 10px;
 
 }
@@ -132,7 +131,7 @@ transform: rotate(60deg) scale(1.1);
 
 .itemTitle{
   margin: 0px;
-  font-size: 16px;
+  font-size: 1.3rem;
 }
 
 .itemDate{
@@ -200,5 +199,32 @@ font-family: 'Ubuntu', sans-serif;
   flex:1;
   float: inline-end;
   
+}
+.footerMain{
+
+  height: 100px;
+  width:100%;
+  text-align: centre;
+  background-color: var(--footerBGColor);
+  margin-top: 50px;
+  /* border-radius: 20px 20px 0px 0px; */
+  box-shadow: 0px 0px 5px 0px black;
+ 
+}
+.footerText {
+  color: var(--footerColor);
+  vertical-align: bottom;
+  padding-top: 30px;
+  text-decoration: none;
+  
+}
+
+.footerText a{
+  text-decoration:none;
+  color: var(--footerColor);
+}
+.footerText:hover::after{
+  content: "Nimin";
+  transition:1sec;
 }
   

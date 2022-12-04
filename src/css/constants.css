@@ -10,7 +10,9 @@
     --popUpBgColor: white;
     --popUpTextBorder: grey;
     --floatingBtnBgColor: white;
-    --saveBtnColor : green
+    --saveBtnColor : green;
+    --footerBGColor: rgba(255,255,255,.4);
+    --footerColor:rgb(55, 55, 55);
     
 
 
