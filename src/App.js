@@ -86,6 +86,10 @@ function App() {
 
   return (
     <div className="App">
+    <button className="floatingReset fa-solid fa-rotate"  header="Reset Data" 
+    onClick={()=>window.confirm("Are you sure to want to clear the data?")&& setTask([])}>
+
+    </button>
       <Header />
       <AddItem addItemfun={itemAddonClick} />
 

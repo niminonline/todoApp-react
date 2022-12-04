@@ -15,7 +15,7 @@ function OGItem(props) {
     seteditPopupState(false);
     }
     else
-    alert("Please enter a value");
+    alert("Please enter a Task");
 
   }
 
@@ -38,7 +38,7 @@ function OGItem(props) {
         <div className="editFieldDiv ">
         <input type="text" className="editPopupText" onChange={(evnt)=>setEditText(evnt.target.value)} 
         onKeyDown={(evnt)=>evnt.key==="Enter"&& editSaveBtn()} value={editText} />
-        <button className="bi bi-check-lg transpButtons text-success saveBtn " title="Save" 
+        <button className="fa-regular fa-floppy-disk transpButtons saveBtn " title="Save" 
         onClick={editSaveBtn}></button>
         </div>
         </div>

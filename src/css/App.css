@@ -8,6 +8,31 @@ body{
   text-align: center;
   margin-top: 20px;
 }
+
+.floatingReset{
+
+color:blue;
+border-radius: 50%;
+height: 60px;
+width: 60px;
+font-size: 25px;
+background-color: var(--floatingBtnBgColor);
+border: none;
+outline: none;
+box-shadow: 0 0 10px 0 black;
+position: fixed;
+right: 30px;
+bottom: 30px;
+text-align: center;
+
+z-index: 1;
+
+}
+.floatingReset:hover{
+transform: rotate(60deg) scale(1.1);
+
+  }
+
 .siteTitle{
   font-weight: bold;
   color: var(--titleColor);
@@ -15,6 +40,24 @@ body{
 .siteSubTitle{
   color: var(--titleColor);
 }
+
+
+.addItemDiv{
+  background-color: var(--addItembgcolor);
+  border-radius: 10px;
+  width:450px;
+  height: 50px;
+  padding-top: 5px;
+  margin: auto auto;
+}
+
+.inputText{
+  outline: none;
+  border: none;
+  width: 350px;
+
+}
+
 .listGroupDiv{
 
   display: flex;
@@ -24,7 +67,7 @@ body{
 
 }
 .listDiv{
-  width: 350px;
+  width: 450px;
   border-radius: 5px;
   margin-top: 20px;
   padding-bottom: 20px;
@@ -54,34 +97,26 @@ body{
  .transpButtons:hover{
   transform: scale(1.2);
  }
+ .saveBtn{
+  color:var(--saveBtnColor);
+ }
 
-.inputText{
-  outline: none;
-  border: none;
-  width: 250px;
 
-}
 .listTitle{
   font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
   margin-top: 10px;
 
 }
-.addItemDiv{
-  background-color: var(--addItembgcolor);
-  border-radius: 10px;
-  width:350px;
-  height: 50px;
-  padding-top: 5px;
-  margin: auto auto;
-}
 
 .itemDiv{
-  width:320px;
+ 
   display:flex;
   background-color: var(--itemDivbgcolor);
   border-radius: 5px;
-  margin:5px auto;
+  margin:15px 5px 15px;
+  
+
  }
  .itemDiv:hover{
   transform: scale(1.05);
@@ -94,12 +129,14 @@ body{
   padding: 0px;
 }
 
+
 .itemTitle{
   margin: 0px;
+  font-size: 16px;
 }
 
 .itemDate{
-font-size: 10px;
+font-size: 12px;
 font-family: 'Ubuntu', sans-serif;
 
 }
@@ -120,7 +157,7 @@ font-family: 'Ubuntu', sans-serif;
     text-decoration: none;
   }
   .editPopup{
-    width:350px;
+    width:450px;
     height:100px;
     border-radius: 10px;
     background-color: var(--popUpBgColor);
@@ -130,12 +167,17 @@ font-family: 'Ubuntu', sans-serif;
     margin-right: auto;
     left: 0;
     right: 0;
+    box-shadow: 0 0 10px 0px black;
   }
 .editPopup:hover{
   transform: scale(none);
+  
+
+ 
   }
 
 .editFieldDiv{
+  padding-top: 8px;
   border-radius: 5px;
   display: flex;  
 }
