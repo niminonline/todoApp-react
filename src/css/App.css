@@ -122,4 +122,53 @@ font-family: 'Ubuntu', sans-serif;
     text-decoration: none;
 
   }
+  .editPopup{
+    width:350px;
+    height:100px;
+    border-radius: 10px;
+    background-color: white;
+    padding: 0px 5px 20px 20px;
+    position: absolute;
+    
+    margin-left: auto;
+    margin-right: auto;
+    
+    left: 0;
+    right: 0;
+  }
+.editPopup:hover{
+  transform: scale(none);
+
+  }
+
+.editFieldDiv{
+  border-radius: 5px;
+  display: flex;
+  
+
+   
+}
+
+.closeBtnDiv{
+  text-align: right;
+}
+
+.closeBtn{
+  margin: auto;
+  font-size: medium;
+  position: relative;
+ 
+
+
+}
+
+.editPopupText{
+  border-radius: 5px;
+  border:1px solid grey;
+  outline: none;
+  margin-right: 5px;
+  flex:1;
+  float: inline-end;
+  
+}
   

@@ -8,8 +8,11 @@ import React, { useState,useEffect} from "react";
 
 
 
+
 function App() {
   const [task,setTask] = useState(JSON.parse(localStorage.getItem("LocalList"))||[]);
+  
+
  
  
   useEffect(()=>{
@@ -36,10 +39,21 @@ function App() {
   }
 
   function deleteOGTask(id) {
-    setTask([...task.filter((element)=>(element.id!==id)),...task.filter((element)=>(element.id===id)&&(element.list="dropped"))])
+    setTask([...task.filter((element)=>(element.id!==id)),...task.filter((element)=>(element.id===id)&&(element.list="dropped"))]);
     task.map((element) => (element.id=== id) && (element.list="dropped"));
    console.log("Task " + id + " moved to dropped list");
   }
+
+  function editSaveAction(id,newData){
+    console.log("Data= "+ newData);
+    setTask([...task.filter((element)=>(element.id!==id)),...task.filter((element)=>(element.id===id)&&(element.data=newData,element.date=new Date().toLocaleString("en-IN")))]);
+
+    
+   // setTask(task.map((element)=>element.id===id&&(element.data=newData)));
+
+  }
+
+  
 
   function deleteDroppedTask(id){
    if(window.confirm("Are you sure to remove the task?")===true)
@@ -83,6 +97,8 @@ function App() {
               date={element.date}
               deleteFun={deleteOGTask}
               doneFun= {doneTaskFun}
+              editSaveFun ={editSaveAction}
+              
               
             />
           ))}
