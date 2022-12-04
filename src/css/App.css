@@ -11,9 +11,6 @@ body{
 .siteTitle{
   font-weight: bold;
   color: var(--titleColor);
-  /* background: -webkit-linear-gradient(rgb(38, 5, 113), rgb(49, 74, 236));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
 }
 .siteSubTitle{
   color: var(--titleColor);
@@ -22,6 +19,8 @@ body{
 
   display: flex;
   justify-content:space-evenly;
+  overflow: hidden;
+  
 
 }
 .listDiv{
@@ -29,13 +28,18 @@ body{
   border-radius: 5px;
   margin-top: 20px;
   padding-bottom: 20px;
+  
 
 }
 .DoneItem{
   background-color: var(--DoneItemColor);
+  
+  
+  
 }
 .OGItem{
   background-color: var(--OGItemColor);
+ 
   }
 
 .DroppedItem{
@@ -49,10 +53,6 @@ body{
  }
  .transpButtons:hover{
   transform: scale(1.2);
-  fill: green;
-  color: blue;
-  
-
  }
 
 .inputText{
@@ -96,7 +96,6 @@ body{
 
 .itemTitle{
   margin: 0px;
-
 }
 
 .itemDate{
@@ -118,35 +117,27 @@ font-family: 'Ubuntu', sans-serif;
   filter:none;
 }
 .droppedItemDiv .itemContent:hover .itemTitle{
-  
     text-decoration: none;
-
   }
   .editPopup{
     width:350px;
     height:100px;
     border-radius: 10px;
-    background-color: white;
+    background-color: var(--popUpBgColor);
     padding: 0px 5px 20px 20px;
     position: absolute;
-    
     margin-left: auto;
     margin-right: auto;
-    
     left: 0;
     right: 0;
   }
 .editPopup:hover{
   transform: scale(none);
-
   }
 
 .editFieldDiv{
   border-radius: 5px;
-  display: flex;
-  
-
-   
+  display: flex;  
 }
 
 .closeBtnDiv{
@@ -157,14 +148,11 @@ font-family: 'Ubuntu', sans-serif;
   margin: auto;
   font-size: medium;
   position: relative;
- 
-
-
 }
 
 .editPopupText{
   border-radius: 5px;
-  border:1px solid grey;
+  border:1px solid  var(--popUpTextBorder);
   outline: none;
   margin-right: 5px;
   flex:1;
