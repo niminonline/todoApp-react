@@ -70,7 +70,7 @@ let isDropVisible=task.filter((element)=>element.list==="dropped").length>0
   function priorityUp(id){
 
     setTask(task.map((element)=>element.id===id?{...element,priority:element.priority+1}:element)
-    .sort((a,b)=>(a.priority-b.priority)));
+    .sort((a,b)=>(b.priority-a.priority)));
 
   }
   function priorityDown(id){

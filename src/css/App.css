@@ -9,7 +9,7 @@ body {
   text-align: center;
   margin-top: 20px;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 .floatingReset {
@@ -38,6 +38,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
+  min-height: 50vh;
 }
 
 .listDiv {
