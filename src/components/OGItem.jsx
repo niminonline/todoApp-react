@@ -53,14 +53,16 @@ function OGItem(props) {
       {!editPopupState && (
         <div className="ogButtons">
           <div className="priority">
-            <button className="priorityUp fa-solid fa-caret-up transpButtons "></button>
-            <p className="priorityNum">{props.priority}</p>
-            <button className="priorityDown priorityUp fa-solid fa-caret-down transpButtons  "></button>
+            <button className="priorityUp fa-solid fa-caret-up transpButtons" title="Increase Priority"
+            onClick={()=>props.priorityUpFun(props.id)}></button>
+            <p className="priorityNum" title="Priority">{props.priority}</p>
+            <button className="priorityDown priorityUp fa-solid fa-caret-down transpButtons" title="Decrease Priority"
+            onClick={()=>props.priority>0&&props.priorityDownFun(props.id)}></button>
           </div>
 
           <div className="editDlteButtonDiv">
             <button
-              className="bi bi-pencil-square transpButtons text-secondary"
+              className="bi bi-pencil-square transpButtons text-secondary" title="Edit Task"
               onClick={() => seteditPopupState(true)}
             ></button>
             <button

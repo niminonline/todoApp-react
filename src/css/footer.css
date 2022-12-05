@@ -1,11 +1,11 @@
 .footerMain {
   height: 100px;
   width: 100%;
-  text-align: centre;
   background-color: var(--footerBGColor);
-  margin-top: 50px;
+  margin-top: auto;
   /* border-radius: 20px 20px 0px 0px; */
   box-shadow: 0px 0px 5px 0px black;
+  flex-shrink: 0;
 }
 .footerText {
   color: var(--footerColor);
@@ -21,10 +21,12 @@
   padding: 0 .25rem;
   text-decoration: none;
   color: var(--footerColor);
-  transition: color 1s ease-in-out, box-shadow .5s ease-in-out;
+  transition:  font-size .3s  ease-in-out, color 2s ease-in-out, box-shadow 1s ease-in-out;
 }
 .footerText a:hover {
+  font-size: larger;
   box-shadow: inset 100px 0 0 0 #000000;
   color: white;
+  
 
 }

@@ -9,12 +9,16 @@ import Footer from "./components/Footer";
 
 function App() {
   const [task, setTask] = useState(
-    JSON.parse(localStorage.getItem("LocalList")) || []
-  );
-
+    JSON.parse(localStorage.getItem("LocalList")) || [] );
+  
   useEffect(() => {
     localStorage.setItem("LocalList", JSON.stringify(task));
   }, [task]);
+
+  
+
+let isDoneVisible= task.filter((element)=>element.list==="done").length>0
+let isDropVisible=task.filter((element)=>element.list==="dropped").length>0
 
   function itemAddonClick(task) {
     console.log("New Item Added to Ongoing List");
@@ -59,16 +63,22 @@ function App() {
     setTask(
       task.map((element) =>
         element.id === id
-          ? {
-              ...element,
-              data: newData,
-              date: new Date().toLocaleString("en-IN"),
-            }
-          : element
-      )
+          ? {...element,data: newData, date: new Date().toLocaleString("en-IN") }: element)
     );
   }
 
+  function priorityUp(id){
+
+    setTask(task.map((element)=>element.id===id?{...element,priority:element.priority+1}:element)
+    .sort((a,b)=>(a.priority-b.priority)));
+
+  }
+  function priorityDown(id){
+
+    setTask(task.map((element)=>element.id===id?{...element,priority:element.priority-1}:element)
+    .sort((a,b)=>(a.priority-b.priority)));
+
+  }
   function deleteDroppedTask(id) {
     if (window.confirm("Are you sure to remove the task?") === true) {
       setTask(() => task.filter((element) => element.id !== id));
@@ -97,9 +107,9 @@ function App() {
       ></button>
       <Header />
       <AddItem addItemfun={itemAddonClick} />
-
       <div className="listGroupDiv row">
-        <div className="listDiv DoneItem ">
+    
+        <div className="listDiv DoneItem " style={{visibility: isDoneVisible? "visible" : "hidden"}}>
           <p className="listTitle">Finished</p>
           {task
             .filter((elements) => elements.list === "done")
@@ -129,12 +139,16 @@ function App() {
                 deleteFun={deleteOGTask}
                 doneFun={doneTaskFun}
                 editSaveFun={editSaveAction}
+                priorityUpFun={priorityUp}
+                priorityDownFun={priorityDown}
 
               />
             ))}
         </div>
 
-        <div className="listDiv DroppedItem">
+       
+
+        <div className="listDiv DroppedItem" style={{visibility: isDropVisible? "visible" : "hidden"}}>
           <p className="listTitle"> Archived</p>
           {task
             .filter((elements) => elements.list === "dropped")

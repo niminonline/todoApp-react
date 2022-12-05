@@ -8,41 +8,37 @@
   flex-direction: column;
 }
 
-.priorityUp{
+.priorityUp {
   color: var(--priorityUpColor);
 }
-.priorityDown{
+.priorityDown {
   color: var(--priorityDownColor);
-}
-.editPopup {
-  width: 450px;
-  height: 100px;
-  border-radius: 10px;
-  background-color: var(--popUpBgColor);
-  padding: 0px 5px 20px 20px;
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  box-shadow: 0 0 10px 0px black;
-}
-.editPopup:hover {
-  transform: scale(none);
-}
-
-.saveBtn {
-  color: var(--saveBtnColor);
 }
 
 .priorityNum {
   margin: 0px;
-
   font-size: 1.4rem;
   position: relative;
   top: -6px;
   height: 22px;
   font-weight: bold;
+}
+
+.editPopup {
+  width: 350px;
+  height: 100px;
+  border-radius: 10px;
+  background-color: var(--popUpBgColor);
+  padding: 0px 5px 20px 20px;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 10px 0px black;
+  z-index: 1;
+
+}
+
+.saveBtn {
+  color: var(--saveBtnColor);
 }
 
 .closeBtnDiv {
