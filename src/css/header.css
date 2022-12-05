@@ -1,0 +1,8 @@
+.siteTitle {
+    font-weight: bold;
+    color: var(--titleColor);
+  }
+  .siteSubTitle {
+    color: var(--titleColor);
+  }
+  

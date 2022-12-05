@@ -9,7 +9,8 @@ import Footer from "./components/Footer";
 
 function App() {
   const [task, setTask] = useState(
-    JSON.parse(localStorage.getItem("LocalList")) || []  );
+    JSON.parse(localStorage.getItem("LocalList")) || []
+  );
 
   useEffect(() => {
     localStorage.setItem("LocalList", JSON.stringify(task));
@@ -24,17 +25,17 @@ function App() {
         data: task,
         list: "OG",
         date: new Date().toLocaleString("en-IN"),
+        priority:0
       },
     ]);
   }
 
   function doneTaskFun(id) {
-    setTask([
-      ...task.filter((element) => element.id !== id),
-      ...task.filter((element) => element.id === id && (element.list = "done")),
-    ]);
-    //task.map((element)=>(element.id===id)&& (element.list="done"));
-
+    setTask(
+      task.map((element) =>
+        element.id === id ? { ...element, list: "done" } : element
+      )
+    );
     console.log("Task" + id + " moved to finished list");
   }
 
@@ -46,28 +47,26 @@ function App() {
   }
 
   function deleteOGTask(id) {
-    setTask([
-      ...task.filter((element) => element.id !== id),
-      ...task.filter(
-        (element) => element.id === id && (element.list = "dropped")
-      ),
-    ]);
-    task.map((element) => element.id === id && (element.list = "dropped"));
+    setTask(
+      task.map((element) =>
+        element.id === id ? { ...element, list: "dropped" } : element
+      )
+    );
     console.log("Task " + id + " moved to dropped list");
   }
 
   function editSaveAction(id, newData) {
-    setTask([
-      ...task.filter((element) => element.id !== id),
-      ...task.filter(
-        (element) =>
-          element.id === id &&
-          ((element.data = newData),
-          (element.date = new Date().toLocaleString("en-IN")))
-      ),      
-    ]);
-    document.body.style.backgroundColor= "white";
-    // setTask(task.map((element)=>element.id===id&&(element.data=newData)));
+    setTask(
+      task.map((element) =>
+        element.id === id
+          ? {
+              ...element,
+              data: newData,
+              date: new Date().toLocaleString("en-IN"),
+            }
+          : element
+      )
+    );
   }
 
   function deleteDroppedTask(id) {
@@ -77,24 +76,29 @@ function App() {
   }
 
   function restoreDroppedTask(id) {
-    setTask([
-      ...task.filter((element) => element.id !== id),
-      ...task.filter((element) => element.id === id && (element.list = "OG")),
-    ]);
+    setTask(
+      task.map((element) =>
+        element.id === id ? { ...element, list: "OG" } : element
+      )
+    );
 
     console.log("Task " + id + " restored to ongoing List");
   }
 
   return (
     <div className="App">
-    <button className="floatingReset fa-solid fa-rotate"  header="Reset Data" 
-    onClick={()=>window.confirm("Are you sure to want to clear the data?")&& setTask([])}>
-
-    </button>
+      <button
+        className="floatingReset fa-solid fa-rotate"
+        header="Reset Data"
+        onClick={() =>
+          window.confirm("Are you sure to want to clear the data?") &&
+          setTask([])
+        }
+      ></button>
       <Header />
       <AddItem addItemfun={itemAddonClick} />
 
-      <div className="listGroupDiv row" >
+      <div className="listGroupDiv row">
         <div className="listDiv DoneItem ">
           <p className="listTitle">Finished</p>
           {task
@@ -105,6 +109,7 @@ function App() {
                 id={element.id}
                 data={element.data}
                 date={element.date}
+                priority ={element.priority}
                 deleteDoneItemFun={deleteDoneTask}
               />
             ))}
@@ -120,9 +125,11 @@ function App() {
                 key={element.id}
                 data={element.data}
                 date={element.date}
+                priority ={element.priority}
                 deleteFun={deleteOGTask}
                 doneFun={doneTaskFun}
                 editSaveFun={editSaveAction}
+
               />
             ))}
         </div>
@@ -137,28 +144,16 @@ function App() {
                 key={element.id}
                 data={element.data}
                 date={element.date}
+                priority ={element.priority}
                 deleteFun={deleteDroppedTask}
                 restoreFun={restoreDroppedTask}
               />
             ))}
         </div>
       </div>
-              <Footer />
+      <Footer />
     </div>
   );
 }
 
 export default App;
-
-// const [ogTask, setOGTask] = useState(JSON.parse(localStorage.getItem("LocalOgList"))||[]);
-// const [doneTask, setdoneTask] = useState(JSON.parse(localStorage.getItem("LocalDoneList"))||[]);
-// const [droppedTask, setDroppedTask] = useState(JSON.parse(localStorage.getItem("LocalDroppedList"))||[]);
-//
-
-// useEffect(()=>{
-
-//   localStorage.setItem("LocalOgList", JSON.stringify(ogTask));
-//   localStorage.setItem("LocalDoneList", JSON.stringify(doneTask));
-//   localStorage.setItem("LocalDroppedList", JSON.stringify(droppedTask));
-
-// },[ogTask,doneTask,droppedTask])

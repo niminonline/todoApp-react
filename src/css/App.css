@@ -1,230 +1,122 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Ubuntu&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Ubuntu&display=swap");
 @import "./constants.css";
 
-body{
+body {
   background-image: var(--gradientColours);
-  font-family: 'Raleway', sans-serif;
-  min-height: 600px;
+  font-family: "Raleway", sans-serif;
+
   text-align: center;
   margin-top: 20px;
+  width: 100%;
+  height: 100%;
 }
 
-.floatingReset{
-
-color:blue;
-border-radius: 50%;
-height: 60px;
-width: 60px;
-font-size: 25px;
-background-color: var(--floatingBtnBgColor);
-border: none;
-box-shadow: 0 0 10px 0 black;
-position: fixed;
-right: 30px;
-bottom: 30px;
-text-align: center;
-z-index: 1;
-transition: 1s;
-transform: rotate(-60deg) scale(1);
-
-}
-.floatingReset:hover{
-transform: rotate(60deg) scale(1.1);
-transition: 1s;
-  }
-
-
-.siteTitle{
-  font-weight: bold;
-  color: var(--titleColor);
-}
-.siteSubTitle{
-  color: var(--titleColor);
-}
-
-
-.addItemDiv{
-  background-color: var(--addItembgcolor);
-  border-radius: 10px;
-  width:450px;
-  height: 50px;
-  padding-top: 5px;
-  margin: auto auto;
-}
-
-.inputText{
-  outline: none;
+.floatingReset {
+  color: blue;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  font-size: 25px;
+  background-color: var(--floatingBtnBgColor);
   border: none;
-  width: 350px;
-
+  box-shadow: 0 0 10px 0 black;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  text-align: center;
+  z-index: 1;
+  transition: 1s;
+  transform: rotate(-60deg) scale(1);
+}
+.floatingReset:hover {
+  transform: rotate(60deg) scale(1.1);
+  transition: 1s;
 }
 
-.listGroupDiv{
-
+.listGroupDiv {
   display: flex;
-  justify-content:space-evenly;
-  overflow: hidden;
- }
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
 
-.listDiv{
+.listDiv {
   width: 450px;
   border-radius: 5px;
   margin-top: 20px;
   padding-bottom: 20px;
-  
-
 }
-.DoneItem{
+.DoneItem {
   background-color: var(--DoneItemColor);
-
 }
-.OGItem{
+.OGItem {
   background-color: var(--OGItemColor);
- 
-  }
+}
 
-.DroppedItem{
+.DroppedItem {
   background-color: var(--DroppedItemColor);
 }
 
-.transpButtons{
+.transpButtons {
   background-color: transparent;
-  border:transparent;
-  font-size:1.5rem;
- }
- .transpButtons:hover{
+  border: transparent;
+  font-size: 1.5rem;
+}
+.transpButtons:hover {
   transform: scale(1.2);
- }
- .saveBtn{
-  color:var(--saveBtnColor);
- }
+}
 
-
-.listTitle{
-  font-family: 'Ubuntu', sans-serif;
+.listTitle {
+  font-family: "Ubuntu", sans-serif;
   font-weight: bold;
   font-size: 1.2rem;
   margin-top: 10px;
-
 }
 
-.itemDiv{
- 
-  display:flex;
+.itemDiv {
+  display: flex;
   background-color: var(--itemDivbgcolor);
   border-radius: 5px;
-  margin:15px 5px 15px;
-  
-
- }
- .itemDiv:hover{
+  margin: 15px 5px 15px;
+}
+.itemDiv:hover {
   transform: scale(1.05);
- }
+}
 
-.itemContent{
-  flex:1;
+.itemContent {
+  flex: 1;
   text-align: left;
   margin: 2px 0px 0px 5px;
   padding: 0px;
 }
 
-
-.itemTitle{
+.itemTitle {
   margin: 0px;
   font-size: 1.3rem;
 }
 
-.itemDate{
-font-size: 12px;
-font-family: 'Ubuntu', sans-serif;
-
+.itemDate {
+  font-size: 12px;
+  font-family: "Ubuntu", sans-serif;
 }
-.strike{
+
+.strike {
   text-decoration: line-through;
 }
 /* .strike:hover{
   text-decoration:none;
 } */
-.blurEffect{
-  filter:blur(1px)
-
+.blurEffect {
+  filter: blur(1px);
 }
-.blurEffect:hover{
-  filter:none;
+.blurEffect:hover {
+  filter: none;
 }
-.droppedItemDiv .itemContent:hover .itemTitle{
-    text-decoration: none;
-  }
-  .editPopup{
-    width:450px;
-    height:100px;
-    border-radius: 10px;
-    background-color: var(--popUpBgColor);
-    padding: 0px 5px 20px 20px;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    box-shadow: 0 0 10px 0px black;
-  }
-.editPopup:hover{
-  transform: scale(none);
-  
+.droppedItemDiv .itemContent:hover .itemTitle {
+  text-decoration: none;
+}
 
- 
-  }
-
-.editFieldDiv{
+.editFieldDiv {
   padding-top: 8px;
   border-radius: 5px;
-  display: flex;  
+  display: flex;
 }
-
-.closeBtnDiv{
-  text-align: right;
-}
-
-.closeBtn{
-  margin: auto;
-  font-size: medium;
-  position: relative;
-}
-
-.editPopupText{
-  border-radius: 5px;
-  border:1px solid  var(--popUpTextBorder);
-  outline: none;
-  margin-right: 5px;
-  flex:1;
-  float: inline-end;
-  
-}
-.footerMain{
-
-  height: 100px;
-  width:100%;
-  text-align: centre;
-  background-color: var(--footerBGColor);
-  margin-top: 50px;
-  /* border-radius: 20px 20px 0px 0px; */
-  box-shadow: 0px 0px 5px 0px black;
- 
-}
-.footerText {
-  color: var(--footerColor);
-  vertical-align: bottom;
-  padding-top: 30px;
-  text-decoration: none;
-  
-}
-
-.footerText a{
-  text-decoration:none;
-  color: var(--footerColor);
-}
-.footerText:hover::after{
-  content: "Nimin";
-  transition:1sec;
-}
-  

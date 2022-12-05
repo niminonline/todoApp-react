@@ -1,0 +1,14 @@
+.addItemDiv {
+  background-color: var(--addItembgcolor);
+  border-radius: 10px;
+  width: 450px;
+  height: 50px;
+  padding-top: 5px;
+  margin: auto auto;
+}
+
+.inputText {
+  outline: none;
+  border: none;
+  width: 350px;
+}
