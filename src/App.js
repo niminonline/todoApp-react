@@ -9,29 +9,31 @@ import Footer from "./components/Footer";
 
 function App() {
   const [task, setTask] = useState(
-    JSON.parse(localStorage.getItem("LocalList")) || [] );
-  
+    JSON.parse(localStorage.getItem("LocalList")) || []
+  );
+
   useEffect(() => {
     localStorage.setItem("LocalList", JSON.stringify(task));
   }, [task]);
 
-  
+  let isDoneVisible = task.filter((element) => element.list === "done").length > 0;
+  let isOGVisible = task.filter((element) => element.list === "OG").length > 0;
+  let isDropVisible = task.filter((element) => element.list === "dropped").length > 0;
 
-let isDoneVisible= task.filter((element)=>element.list==="done").length>0
-let isDropVisible=task.filter((element)=>element.list==="dropped").length>0
-
-  function itemAddonClick(task) {
-    console.log("New Item Added to Ongoing List");
-    setTask((prevVal) => [
-      ...prevVal,
-      {
-        id: Date.now(),
-        data: task,
-        list: "OG",
-        date: new Date().toLocaleString("en-IN"),
-        priority:0
-      },
-    ]);
+  function itemAddonClick(inputTask) {
+    if (task.filter((element=>element.list==="OG"||element.list==="dropped")).find((element) => (element.data).toLowerCase().trim() === inputTask.toLowerCase().trim()) === undefined) {
+      setTask((prevVal) => [
+        ...prevVal,
+        {
+          id: Date.now(),
+          data: inputTask,
+          list: "OG",
+          date: new Date().toLocaleString("en-IN"),
+          priority: 0,
+        },
+      ]);
+      console.log("New Item Added to Ongoing List");
+    } else alert("Task already exists");
   }
 
   function doneTaskFun(id) {
@@ -63,21 +65,37 @@ let isDropVisible=task.filter((element)=>element.list==="dropped").length>0
     setTask(
       task.map((element) =>
         element.id === id
-          ? {...element,data: newData, date: new Date().toLocaleString("en-IN") }: element)
+          ? {
+              ...element,
+              data: newData,
+              date: new Date().toLocaleString("en-IN"),
+            }
+          : element
+      )
     );
   }
 
-  function priorityUp(id){
-
-    setTask(task.map((element)=>element.id===id?{...element,priority:element.priority+1}:element)
-    .sort((a,b)=>(b.priority-a.priority)));
-
+  function priorityUp(id) {
+    setTask(
+      task
+        .map((element) =>
+          element.id === id
+            ? { ...element, priority: element.priority + 1 }
+            : element
+        )
+        .sort((a, b) => a.priority - b.priority)
+    );
   }
-  function priorityDown(id){
-
-    setTask(task.map((element)=>element.id===id?{...element,priority:element.priority-1}:element)
-    .sort((a,b)=>(a.priority-b.priority)));
-
+  function priorityDown(id) {
+    setTask(
+      task
+        .map((element) =>
+          element.id === id
+            ? { ...element, priority: element.priority - 1 }
+            : element
+        )
+        .sort((a, b) => a.priority - b.priority)
+    );
   }
   function deleteDroppedTask(id) {
     if (window.confirm("Are you sure to remove the task?") === true) {
@@ -108,8 +126,10 @@ let isDropVisible=task.filter((element)=>element.list==="dropped").length>0
       <Header />
       <AddItem addItemfun={itemAddonClick} />
       <div className="listGroupDiv row">
-    
-        <div className="listDiv DoneItem " style={{visibility: isDoneVisible? "visible" : "hidden"}}>
+        <div
+          className="listDiv DoneItem "
+          style={{ visibility: isDoneVisible ? "visible" : "hidden" }}
+        >
           <p className="listTitle">Finished</p>
           {task
             .filter((elements) => elements.list === "done")
@@ -119,13 +139,16 @@ let isDropVisible=task.filter((element)=>element.list==="dropped").length>0
                 id={element.id}
                 data={element.data}
                 date={element.date}
-                priority ={element.priority}
+                priority={element.priority}
                 deleteDoneItemFun={deleteDoneTask}
               />
             ))}
         </div>
 
-        <div className="listDiv OGItem ">
+        <div
+          className="listDiv OGItem"
+          style={{ visibility: isOGVisible ? "visible" : "hidden" }}
+        >
           <p className="listTitle"> Ongoing</p>
           {task
             .filter((elements) => elements.list === "OG")
@@ -135,20 +158,20 @@ let isDropVisible=task.filter((element)=>element.list==="dropped").length>0
                 key={element.id}
                 data={element.data}
                 date={element.date}
-                priority ={element.priority}
+                priority={element.priority}
                 deleteFun={deleteOGTask}
                 doneFun={doneTaskFun}
                 editSaveFun={editSaveAction}
                 priorityUpFun={priorityUp}
                 priorityDownFun={priorityDown}
-
               />
             ))}
         </div>
 
-       
-
-        <div className="listDiv DroppedItem" style={{visibility: isDropVisible? "visible" : "hidden"}}>
+        <div
+          className="listDiv DroppedItem"
+          style={{ visibility: isDropVisible ? "visible" : "hidden" }}
+        >
           <p className="listTitle"> Archived</p>
           {task
             .filter((elements) => elements.list === "dropped")
@@ -158,7 +181,7 @@ let isDropVisible=task.filter((element)=>element.list==="dropped").length>0
                 key={element.id}
                 data={element.data}
                 date={element.date}
-                priority ={element.priority}
+                priority={element.priority}
                 deleteFun={deleteDroppedTask}
                 restoreFun={restoreDroppedTask}
               />

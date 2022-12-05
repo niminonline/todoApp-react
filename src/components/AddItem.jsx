@@ -23,7 +23,6 @@ function AddItem(props) {
       <button
         className="bi bi-eraser-fill transpButtons text-secondary"
         title="Clear Field"
-        // onMouseOver={}
         onClick={() => settask("")}
       ></button>
       <button
